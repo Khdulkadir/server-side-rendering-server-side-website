@@ -1,0 +1,6 @@
+<% index.forEach(function(Artikelen) { %>
+<article>
+  <h2><%- Artikelen.title.rendered %></h2>
+  <img src="<%= Artikelen.source_url %>" />
+</article>
+<% }); %>
