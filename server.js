@@ -32,17 +32,23 @@ app.listen(app.get("port"), function () {
 
 /*** Routes & data ***/
 
-app.get("/", function (request, response) {
-  fetchJson("https://redpers.nl/wp-json/wp/v2/posts"),
-    fetchJson("https://redpers.nl/wp-json/wp/v2/media").then(
-      (posts, medias) => {
-        response.render("index", { postsAPI: posts, mediaAPI: medias });
-      }
-    );
-});
+// app.get("/", function (request, response) {
+//   fetchJson("https://redpers.nl/wp-json/wp/v2/media").then((MediaAPI) => {
+//     response.render("index", { media: MediaAPI });
+//   });
+// });
+
+// app.get("/", function (request, response) {
+//   fetchJson("https://redpers.nl/wp-json/wp/v2/posts").then((postsAPI) => {
+//     response.render("index", { posts: postsAPI });
+//   });
+// });
 
 app.get("/", function (request, response) {
-  fetchJson("https://redpers.nl/wp-json/wp/v2/media").then((MediaAPI) => {
-    response.render("index", { index: MediaAPI });
+  Promise.all([
+    fetchJson("https://redpers.nl/wp-json/wp/v2/media"),
+    fetchJson("https://redpers.nl/wp-json/wp/v2/posts"),
+  ]).then(([mediaAPI, postsAPI]) => {
+    response.render("index", { media: mediaAPI, posts: postsAPI });
   });
 });
