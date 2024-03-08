@@ -1,14 +1,6 @@
-<!-- Combine media and posts into a single array -->
-
-<% posts.forEach(function(artikel) { %>
-<article>
-  <h2><%- artikel.title.rendered %></h2>
-  <% media.forEach(function(artikelmedia) { %> <% if (artikel.featured_media ==
-  artikelmedia.id) { %>
-  <img
-    src="<%= artikelmedia.source_url %>"
-    alt="<%= artikelmedia.caption.rendered%>"
-  />
-  <% } %> <% }); %>
-</article>
+<% posts.forEach(function(article) { %>
+  <article>
+    <h2><%- article.title.rendered %></h2>
+<img src="<%= article.yoast_head_json.og_image[0].url %>" alt="<%= article.yoast_head_json.schema['@graph'][2].caption %>"/>
+  </article>
 <% }); %>

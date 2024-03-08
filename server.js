@@ -33,28 +33,15 @@ app.listen(app.get("port"), function () {
 /*** Routes & data ***/
 
 app.get("/", function (request, response) {
-  Promise.all([
-    fetchJson("https://redpers.nl/wp-json/wp/v2/media"),
-    fetchJson("https://redpers.nl/wp-json/wp/v2/posts"),
-  ]).then(([mediaAPI, postsAPI]) => {
-    response.render("index", { media: mediaAPI, posts: postsAPI });
+    fetchJson("https://redpers.nl/wp-json/wp/v2/posts")
+  .then((postsData) => {
+    response.render("index", {posts: postsData });
   });
 });
 
 app.get("/binnenland", function (request, response) {
-  Promise.all([
-    fetchJson("https://redpers.nl/wp-json/wp/v2/media"),
-    fetchJson("https://redpers.nl/wp-json/wp/v2/posts"),
-  ]).then(([mediaAPI, postsAPI]) => {
-    response.render("binnenland", { media: mediaAPI, posts: postsAPI });
-  });
-});
-
-app.get("/binnenland/:slug", function (request, response) {
-  Promise.all([
-    fetchJson("https://redpers.nl/wp-json/wp/v2/media"),
-    fetchJson("https://redpers.nl/wp-json/wp/v2/posts"),
-  ]).then(([mediaAPI, postsAPI]) => {
-    response.render("binnenland", { media: mediaAPI, posts: postsAPI });
+    fetchJson("https://redpers.nl/wp-json/wp/v2/posts")
+  .then((postsData) => {
+    response.render("binnenland", {posts: postsData });
   });
 });

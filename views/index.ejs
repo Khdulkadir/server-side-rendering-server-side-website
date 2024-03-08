@@ -2,7 +2,10 @@
 
 <% posts.forEach(function(artikel) { %>
 <article>
+  
   <h2><%- artikel.title.rendered %></h2>
+ <img src="<%= artikel.thumbnailUrl %>"/>
+
   <% media.forEach(function(artikelmedia) { %> <% if (artikel.featured_media ==
   artikelmedia.id) { %>
   <img
@@ -10,5 +13,6 @@
     alt="<%= artikelmedia.caption.rendered%>"
   />
   <% } %> <% }); %>
+
 </article>
 <% }); %>
