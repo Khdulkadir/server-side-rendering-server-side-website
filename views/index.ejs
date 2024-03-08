@@ -1,18 +1,183 @@
-<!-- Combine media and posts into a single array -->
+<div class="main-container">
+  <a class="article-link" href="<%= posts[0].link%>">
+    <article class="main-article">
+      <h2><%- posts[0].title.rendered %></h2>
+      <img
+        src="<%= posts[0].yoast_head_json.og_image[0].url %>"
+        alt="<%= posts[0].yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="caption">
+        <%= posts[0].yoast_head_json.schema['@graph'][2].caption %>
+      </p>
+      <span><%- posts[0].excerpt.rendered %></span>
+      <p class="author"><%= posts[0].yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= posts[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= posts[0].date %></p>
+    </article>
+  </a>
+</div>
 
-<% posts.forEach(function(artikel) { %>
-<article>
-  
-  <h2><%- artikel.title.rendered %></h2>
- <img src="<%= artikel.thumbnailUrl %>"/>
+<% for (var i = 1; i <= 3; i++) { %>
+<div class="sub-article-container">
+  <a class="article-link" href="<%= posts[i].link%>">
+    <article class="sub-article">
+      <h2><%- posts[i].title.rendered %></h2>
+      <img
+        src="<%= posts[i].yoast_head_json.og_image[0].url %>"
+        alt="<%= posts[i].yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= posts[i].yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= posts[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= posts[i].date %></p>
+    </article>
+  </a>
+</div>
 
-  <% media.forEach(function(artikelmedia) { %> <% if (artikel.featured_media ==
-  artikelmedia.id) { %>
-  <img
-    src="<%= artikelmedia.source_url %>"
-    alt="<%= artikelmedia.caption.rendered%>"
-  />
-  <% } %> <% }); %>
+<% } %> <% binnenland.forEach(function(binnenland) { %>
+<div class="sub-article-binnenland-container">
+  <a class="article-link" href="<%= binnenland.link%>">
+    <article class="sub-article-binnenland">
+      <h2><%- binnenland.title.rendered %></h2>
+      <img
+        src="<%= binnenland.yoast_head_json.og_image[0].url %>"
+        alt="<%= binnenland.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= binnenland.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= binnenland.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= binnenland.date %></p>
+    </article>
+  </a>
+</div>
 
-</article>
+<% }); %> <% buitenland.forEach(function(buitenland) { %>
+<div class="sub-article-buitenland-container">
+  <a class="article-link" href="<%= buitenland.link%>">
+    <article class="sub-article-buitenland">
+      <h2><%- buitenland.title.rendered %></h2>
+      <img
+        src="<%= buitenland.yoast_head_json.og_image[0].url %>"
+        alt="<%= buitenland.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= buitenland.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= buitenland.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= buitenland.date %></p>
+    </article>
+  </a>
+</div>
+
+<% }); %> <% columns.forEach(function(columns) { %>
+<div class="sub-article-columns-container">
+  <a class="article-link" href="<%= columns.link%>">
+    <article class="sub-article-columns">
+      <h2><%- columns.title.rendered %></h2>
+      <img
+        src="<%= columns.yoast_head_json.og_image[0].url %>"
+        alt="<%= columns.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= columns.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= columns.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= columns.date %></p>
+    </article>
+  </a>
+</div>
+
+<% }); %> <% economie.forEach(function(economie) { %>
+<div class="sub-article-economie-container">
+  <a class="article-link" href="<%= economie.link%>">
+    <article class="sub-article-economie">
+      <h2><%- economie.title.rendered %></h2>
+      <img
+        src="<%= economie.yoast_head_json.og_image[0].url %>"
+        alt="<%= economie.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= economie.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= economie.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= economie.date %></p>
+    </article>
+  </a>
+</div>
+
+<% }); %> <% kunstmedia.forEach(function(kunstmedia) { %>
+<div class="sub-article-kunstmedia-container">
+  <a class="article-link" href="<%= kunstmedia.link%>">
+    <article class="sub-article-kunstmedia">
+      <h2><%- kunstmedia.title.rendered %></h2>
+      <img
+        src="<%= kunstmedia.yoast_head_json.og_image[0].url %>"
+        alt="<%= kunstmedia.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= kunstmedia.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= kunstmedia.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= kunstmedia.date %></p>
+    </article>
+  </a>
+</div>
+
+<% }); %> <% podcast.forEach(function(podcast) { %>
+<div class="sub-article-podcast-container">
+  <a class="article-link" href="<%= podcast.link%>">
+    <article class="sub-article-podcast">
+      <h2><%- podcast.title.rendered %></h2>
+      <img
+        src="<%= podcast.yoast_head_json.og_image[0].url %>"
+        alt="<%= podcast.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= podcast.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= podcast.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= podcast.date %></p>
+    </article>
+  </a>
+</div>
+
+<% }); %> <% politiek.forEach(function(politiek) { %>
+<div class="sub-article-politiek-container">
+  <a class="article-link" href="<%= politiek.link%>">
+    <article class="sub-article-politiek">
+      <h2><%- politiek.title.rendered %></h2>
+      <img
+        src="<%= politiek.yoast_head_json.og_image[0].url %>"
+        alt="<%= politiek.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= politiek.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= politiek.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= politiek.date %></p>
+    </article>
+  </a>
+</div>
+
+<% }); %> <% wetenschap.forEach(function(wetenschap) { %>
+<div class="sub-article-wetenschap-container">
+  <a class="article-link" href="<%= wetenschap.link%>">
+    <article class="sub-article-wetenschap">
+      <h2><%- wetenschap.title.rendered %></h2>
+      <img
+        src="<%= wetenschap.yoast_head_json.og_image[0].url %>"
+        alt="<%= wetenschap.yoast_head_json.schema['@graph'][2].caption %>"
+      />
+      <p class="author"><%= wetenschap.yoast_head_json.author %></p>
+      <p class="reading-time">
+        <%= wetenschap.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+      </p>
+      <p class="date"><%= wetenschap.date %></p>
+    </article>
+  </a>
+</div>
 <% }); %>

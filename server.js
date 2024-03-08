@@ -33,10 +33,35 @@ app.listen(app.get("port"), function () {
 /*** Routes & data ***/
 
 app.get("/", function (request, response) {
-    fetchJson("https://redpers.nl/wp-json/wp/v2/posts")
-  .then((postsData) => {
-    response.render("index", {posts: postsData });
-  });
+  const apiURLPosts = "https://redpers.nl/wp-json/wp/v2/posts?per_page=4";
+  const apiURLBinnenland = "https://redpers.nl/wp-json/wp/v2/posts?categories=9&per_page=3";
+  const apiURLBuitenland = "https://redpers.nl/wp-json/wp/v2/posts?categories=1010&per_page=3";
+  const apiURLColumns = "https://redpers.nl/wp-json/wp/v2/posts?categories=10&per_page=3";
+  const apiURLEconomie = "https://redpers.nl/wp-json/wp/v2/posts?categories=6&per_page=3";
+  const apiURLKunstMedia = "https://redpers.nl/wp-json/wp/v2/posts?categories=4&per_page=3";
+  const apiURLPodcast = "https://redpers.nl/wp-json/wp/v2/posts?categories=3211&per_page=3";
+  const apiURLPolitiek = "https://redpers.nl/wp-json/wp/v2/posts?categories=63&per_page=3";
+  const apiURLWetenschap = "https://redpers.nl/wp-json/wp/v2/posts?categories=94&per_page=3";
+
+
+
+    Promise.all([
+      fetchJson(apiURLPosts),
+      fetchJson(apiURLBinnenland),
+      fetchJson(apiURLBuitenland),
+      fetchJson(apiURLColumns),
+      fetchJson(apiURLEconomie),
+      fetchJson(apiURLKunstMedia),
+      fetchJson(apiURLPodcast),
+      fetchJson(apiURLPolitiek),
+      fetchJson(apiURLWetenschap)
+
+
+
+    ])
+    .then(([postsData, binnenlandData, buitenlandData, columnsData, economieData, kunstmediaData, podcastData, politiekData, wetenschapData ]) => {
+        response.render("index", { posts: postsData, binnenland: binnenlandData, buitenland: buitenlandData, columns: columnsData, economie: economieData, kunstmedia: kunstmediaData, podcast: podcastData, politiek: politiekData, wetenschap: wetenschapData  });
+    })
 });
 
 app.get("/binnenland", function (request, response) {
