@@ -88,20 +88,38 @@ app.get("/", function (request, response) {
   );
 });
 
-app.get("/binnenland", function (request, response) {
-  fetchJson(
-    "https://redpers.nl/wp-json/wp/v2/posts?categories=9&per_page=20"
-  ).then((binnenlandData) => {
-    response.render("binnenland", { binnenland: binnenlandData });
+const categoryRoutes = [
+  { name: "binnenland", id: 9 },
+  { name: "buitenland", id: 1010 },
+  { name: "columns", id: 10 },
+  { name: "economie", id: 6 },
+  { name: "kunst-en-media", id: 4 },
+  { name: "podcast", id: 3211 },
+  { name: "politiek", id: 63 },
+  { name: "wetenschap", id: 94 },
+];
+
+categoryRoutes.forEach((categoryOptions) => {
+  app.get(`/${categoryOptions.name}`, function (request, response) {
+    fetchJson(
+      `https://redpers.nl/wp-json/wp/v2/posts?categories=${categoryOptions.id}`
+    ).then((categoryData) => {
+      response.render("category", {
+        category: categoryData,
+        categoryRoutes: categoryRoutes,
+      });
+    });
   });
 });
 
-app.get("/binnenland/:id", function (request, response) {
-  fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/${request.params.id}`).then(
-    (articleData) => {
+categoryRoutes.forEach((categoryOption) => {
+  app.get(`/${categoryOption.name}/:id`, function (request, response) {
+    fetchJson(
+      `https://redpers.nl/wp-json/wp/v2/posts/${request.params.id}`
+    ).then((categoryData) => {
       response.render("category-article", {
-        categoryArticle: articleData,
+        category: categoryData,
       });
-    }
-  );
+    });
+  });
 });
