@@ -35,7 +35,7 @@ app.listen(app.get("port"), function () {
 const baseURL = "https://redpers.nl/wp-json/wp/v2/posts?categories=";
 const perPage = "&per_page=3";
 
-const apiURLPosts = "https://redpers.nl/wp-json/wp/v2/posts?per_page=4";
+const apiURLVoorpagina = "https://redpers.nl/wp-json/wp/v2/posts?per_page=4";
 const apiURLBinnenland = baseURL + 9 + perPage;
 const apiURLBuitenland = baseURL + 1010 + perPage;
 const apiURLColumns = baseURL + 10 + perPage;
@@ -49,7 +49,7 @@ const apiURLWetenschap = baseURL + 94 + perPage;
 
 app.get("/", function (request, response) {
   Promise.all([
-    fetchJson(apiURLPosts),
+    fetchJson(apiURLVoorpagina),
     fetchJson(apiURLBinnenland),
     fetchJson(apiURLBuitenland),
     fetchJson(apiURLColumns),
@@ -60,7 +60,7 @@ app.get("/", function (request, response) {
     fetchJson(apiURLWetenschap),
   ]).then(
     ([
-      postsData,
+      voorpaginaData,
       binnenlandData,
       buitenlandData,
       columnsData,
@@ -71,7 +71,7 @@ app.get("/", function (request, response) {
       wetenschapData,
     ]) => {
       response.render("index", {
-        posts: postsData,
+        voorpagina: voorpaginaData,
         binnenland: binnenlandData,
         buitenland: buitenlandData,
         columns: columnsData,
@@ -97,9 +97,9 @@ app.get("/:categories", function (request, response) {
 
 app.get("/:categories/:id", function (request, response) {
   fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/${request.params.id}`).then(
-    (categoryArticleData) => {
-      response.render("category-article", {
-        categoryArticle: categoryArticleData,
+    (articleData) => {
+      response.render("article", {
+        article: articleData,
       });
     }
   );

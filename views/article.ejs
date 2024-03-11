@@ -1,0 +1,21 @@
+<div class="article-page-container">
+  <article class="article-page">
+    <h2><%- article.title.rendered %></h2>
+    <img
+      class="featured-image"
+      src="<%= article.yoast_head_json.og_image[0].url %>"
+      alt="<%= article.yoast_head_json.schema['@graph'][2].caption %>"
+    />
+    <p class="category-name"><%= article.categories%></p>
+    <p class="caption">
+      <%= article.yoast_head_json.schema['@graph'][2].caption %>
+    </p>
+    <span class="excerpt"><%- article.excerpt.rendered %></span>
+
+    <p class="reading-time">
+      <%= article.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+    </p>
+    <p class="date"><%= article.date %></p>
+    <div class="content"><%- article.content.rendered %></div>
+  </article>
+</div>

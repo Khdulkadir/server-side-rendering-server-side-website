@@ -1,41 +1,44 @@
 <div class="main-container">
   <a
     class="article-link"
-    href="<%= posts[0].categories[0] %>/<%= posts[0].id%>"
+    href="<%= voorpagina[0].categories[0] %>/<%= voorpagina[0].id%>"
   >
     <article class="main-article">
-      <h2><%- posts[0].title.rendered %></h2>
+      <h2><%- voorpagina[0].title.rendered %></h2>
       <img
-        src="<%= posts[0].yoast_head_json.og_image[0].url %>"
-        alt="<%= posts[0].yoast_head_json.schema['@graph'][2].caption %>"
+        src="<%= voorpagina[0].yoast_head_json.og_image[0].url %>"
+        alt="<%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="caption">
-        <%= posts[0].yoast_head_json.schema['@graph'][2].caption %>
+        <%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>
       </p>
-      <span><%- posts[0].excerpt.rendered %></span>
-      <p class="author"><%= posts[0].yoast_head_json.author %></p>
+      <span><%- voorpagina[0].excerpt.rendered %></span>
+      <p class="author"><%= voorpagina[0].yoast_head_json.author %></p>
       <p class="reading-time">
-        <%= posts[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+        <%= voorpagina[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
       </p>
-      <p class="date"><%= posts[0].date %></p>
+      <p class="date"><%= voorpagina[0].date %></p>
     </article>
   </a>
 </div>
 
 <% for (var i = 1; i <= 3; i++) { %>
 <div class="sub-article-container">
-  <a class="article-link" href="<%= posts[i].categories[0]%>/<%= posts[i].id%>">
+  <a
+    class="article-link"
+    href="<%= voorpagina[i].categories[0]%>/<%= voorpagina[i].id%>"
+  >
     <article class="sub-article">
-      <h2><%- posts[i].title.rendered %></h2>
+      <h2><%- voorpagina[i].title.rendered %></h2>
       <img
-        src="<%= posts[i].yoast_head_json.og_image[0].url %>"
-        alt="<%= posts[i].yoast_head_json.schema['@graph'][2].caption %>"
+        src="<%= voorpagina[i].yoast_head_json.og_image[0].url %>"
+        alt="<%= voorpagina[i].yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= posts[i].yoast_head_json.author %></p>
+      <p class="author"><%= voorpagina[i].yoast_head_json.author %></p>
       <p class="reading-time">
-        <%= posts[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
+        <%= voorpagina[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
       </p>
-      <p class="date"><%= posts[i].date %></p>
+      <p class="date"><%= voorpagina[i].date %></p>
     </article>
   </a>
 </div>
