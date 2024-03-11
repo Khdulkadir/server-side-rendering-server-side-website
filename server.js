@@ -30,32 +30,22 @@ app.listen(app.get("port"), function () {
   console.log(`Application started on http://localhost:${app.get("port")}`);
 });
 
-/*** Routes & data ***/
-
-const categoryRoutes = [
-  { name: "binnenland", id: 9 },
-  { name: "buitenland", id: 1010 },
-  { name: "columns", id: 10 },
-  { name: "economie", id: 6 },
-  { name: "kunst-en-media", id: 4 },
-  { name: "podcast", id: 3211 },
-  { name: "politiek", id: 63 },
-  { name: "wetenschap", id: 94 },
-];
+/*** Constants ***/
 
 const baseURL = "https://redpers.nl/wp-json/wp/v2/posts?categories=";
 const perPage = "&per_page=3";
-const apiURLs = categoryRoutes.map((route) => baseURL + route.id + perPage);
 
 const apiURLPosts = "https://redpers.nl/wp-json/wp/v2/posts?per_page=4";
-const apiURLBinnenland = apiURLs[0];
-const apiURLBuitenland = apiURLs[1];
-const apiURLColumns = apiURLs[2];
-const apiURLEconomie = apiURLs[3];
-const apiURLKunstMedia = apiURLs[4];
-const apiURLPodcast = apiURLs[5];
-const apiURLPolitiek = apiURLs[6];
-const apiURLWetenschap = apiURLs[7];
+const apiURLBinnenland = baseURL + 9 + perPage;
+const apiURLBuitenland = baseURL + 1010 + perPage;
+const apiURLColumns = baseURL + 10 + perPage;
+const apiURLEconomie = baseURL + 6 + perPage;
+const apiURLKunstMedia = baseURL + 4 + perPage;
+const apiURLPodcast = baseURL + 3211 + perPage;
+const apiURLPolitiek = baseURL + 63 + perPage;
+const apiURLWetenschap = baseURL + 94 + perPage;
+
+/*** Routes & data ***/
 
 app.get("/", function (request, response) {
   Promise.all([
@@ -90,31 +80,27 @@ app.get("/", function (request, response) {
         podcast: podcastData,
         politiek: politiekData,
         wetenschap: wetenschapData,
-        categoryRoutes: categoryRoutes,
       });
     }
   );
 });
 
-categoryRoutes.forEach((categoryOptions) => {
-  app.get(`/${categoryOptions.name}`, function (request, response) {
-    fetchJson(baseURL + categoryOptions.id).then((categoryData) => {
-      response.render("category", {
-        category: categoryData,
-        categoryRoutes: categoryRoutes,
-      });
+app.get("/:categories", function (request, response) {
+  fetchJson(
+    `https://redpers.nl/wp-json/wp/v2/posts?categories=${request.params.categories}`
+  ).then((categoryData) => {
+    response.render("category", {
+      category: categoryData,
     });
   });
 });
 
-categoryRoutes.forEach((categoryOption) => {
-  app.get(`/${categoryOption.name}/:id`, function (request, response) {
-    fetchJson(
-      `https://redpers.nl/wp-json/wp/v2/posts/${request.params.id}`
-    ).then((categoryData) => {
+app.get("/:categories/:id", function (request, response) {
+  fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/${request.params.id}`).then(
+    (categoryArticleData) => {
       response.render("category-article", {
-        category: categoryData,
+        categoryArticle: categoryArticleData,
       });
-    });
-  });
+    }
+  );
 });

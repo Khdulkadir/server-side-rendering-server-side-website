@@ -1,5 +1,8 @@
 <div class="main-container">
-  <a class="article-link" href="<%= posts[0].categories %>/<%= posts[0].id%>">
+  <a
+    class="article-link"
+    href="<%= posts[0].categories[0] %>/<%= posts[0].id%>"
+  >
     <article class="main-article">
       <h2><%- posts[0].title.rendered %></h2>
       <img
@@ -21,7 +24,7 @@
 
 <% for (var i = 1; i <= 3; i++) { %>
 <div class="sub-article-container">
-  <a class="article-link" href="<%= posts[0].categories%>/<%= posts[0].id%>">
+  <a class="article-link" href="<%= posts[i].categories[0]%>/<%= posts[i].id%>">
     <article class="sub-article">
       <h2><%- posts[i].title.rendered %></h2>
       <img

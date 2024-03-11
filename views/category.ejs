@@ -1,17 +1,17 @@
-<% category.forEach(function(post) { %>
+<% category.forEach(function(category) { %>
 <div class="sub-article-container">
-  <% categoryRoutes.forEach(function(categoryOptions) { %> <% if
-  (post.categories.includes(categoryOptions.id)) { %>
-  <a class="article-link" href="/<%= post.categories[0] %>/<%= post.id %>">
+  <a
+    class="article-link"
+    href="/<%= category.categories[0] %>/<%= category.id %>"
+  >
     <article class="sub-article">
-      <h2><%- post.title.rendered %></h2>
+      <h2><%- category.title.rendered %></h2>
       <img
-        src="<%= post.yoast_head_json.og_image[0].url %>"
-        alt="<%= post.yoast_head_json.schema['@graph'][2].caption %>"
+        src="<%= category.yoast_head_json.og_image[0].url %>"
+        alt="<%= category.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="date"><%= post.date %></p>
+      <p class="date"><%= category.date %></p>
     </article>
   </a>
-  <% } %> <% }); %>
 </div>
 <% }); %>
