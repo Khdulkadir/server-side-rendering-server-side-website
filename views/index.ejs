@@ -1,5 +1,5 @@
 <div class="main-container">
-  <a class="article-link" href="<%= posts[0].link%>">
+  <a class="article-link" href="<%= posts[0].categories %>/<%= posts[0].id%>">
     <article class="main-article">
       <h2><%- posts[0].title.rendered %></h2>
       <img
@@ -21,7 +21,7 @@
 
 <% for (var i = 1; i <= 3; i++) { %>
 <div class="sub-article-container">
-  <a class="article-link" href="<%= posts[i].link%>">
+  <a class="article-link" href="<%= posts[0].categories%>/<%= posts[0].id%>">
     <article class="sub-article">
       <h2><%- posts[i].title.rendered %></h2>
       <img
@@ -39,7 +39,10 @@
 
 <% } %> <% binnenland.forEach(function(binnenland) { %>
 <div class="sub-article-binnenland-container">
-  <a class="article-link" href="<%= binnenland.link%>">
+  <a
+    class="article-link"
+    href="<%= binnenland.categories[0]%>/<%= binnenland.id%>"
+  >
     <article class="sub-article-binnenland">
       <h2><%- binnenland.title.rendered %></h2>
       <img
@@ -57,7 +60,10 @@
 
 <% }); %> <% buitenland.forEach(function(buitenland) { %>
 <div class="sub-article-buitenland-container">
-  <a class="article-link" href="<%= buitenland.link%>">
+  <a
+    class="article-link"
+    href="<%= buitenland.categories[0]%>/<%= buitenland.id%>"
+  >
     <article class="sub-article-buitenland">
       <h2><%- buitenland.title.rendered %></h2>
       <img
@@ -75,7 +81,7 @@
 
 <% }); %> <% columns.forEach(function(columns) { %>
 <div class="sub-article-columns-container">
-  <a class="article-link" href="<%= columns.link%>">
+  <a class="article-link" href="<%= columns.categories[0]%>/<%= columns.id%>">
     <article class="sub-article-columns">
       <h2><%- columns.title.rendered %></h2>
       <img
@@ -93,7 +99,7 @@
 
 <% }); %> <% economie.forEach(function(economie) { %>
 <div class="sub-article-economie-container">
-  <a class="article-link" href="<%= economie.link%>">
+  <a class="article-link" href="<%= economie.categories[0]%>/<%= economie.id%>">
     <article class="sub-article-economie">
       <h2><%- economie.title.rendered %></h2>
       <img
@@ -111,7 +117,10 @@
 
 <% }); %> <% kunstmedia.forEach(function(kunstmedia) { %>
 <div class="sub-article-kunstmedia-container">
-  <a class="article-link" href="<%= kunstmedia.link%>">
+  <a
+    class="article-link"
+    href="<%= kunstmedia.categories[0]%>/<%= kunstmedia.id%>"
+  >
     <article class="sub-article-kunstmedia">
       <h2><%- kunstmedia.title.rendered %></h2>
       <img
@@ -129,7 +138,7 @@
 
 <% }); %> <% podcast.forEach(function(podcast) { %>
 <div class="sub-article-podcast-container">
-  <a class="article-link" href="<%= podcast.link%>">
+  <a class="article-link" href="<%= podcast.categories[0]%>/<%= podcast.id%>">
     <article class="sub-article-podcast">
       <h2><%- podcast.title.rendered %></h2>
       <img
@@ -147,7 +156,7 @@
 
 <% }); %> <% politiek.forEach(function(politiek) { %>
 <div class="sub-article-politiek-container">
-  <a class="article-link" href="<%= politiek.link%>">
+  <a class="article-link" href="<%= politiek.categories[0]%>/<%= politiek.id%>">
     <article class="sub-article-politiek">
       <h2><%- politiek.title.rendered %></h2>
       <img
@@ -165,7 +174,10 @@
 
 <% }); %> <% wetenschap.forEach(function(wetenschap) { %>
 <div class="sub-article-wetenschap-container">
-  <a class="article-link" href="<%= wetenschap.link%>">
+  <a
+    class="article-link"
+    href="<%= wetenschap.categories[0]%>/<%= wetenschap.id%>"
+  >
     <article class="sub-article-wetenschap">
       <h2><%- wetenschap.title.rendered %></h2>
       <img
