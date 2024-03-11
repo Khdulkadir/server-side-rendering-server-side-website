@@ -1,3 +1,5 @@
+<%- include('partials/head'); %>
+
 <div class="main-container">
   <a
     class="article-link"
@@ -7,6 +9,7 @@
       <h2><%- voorpagina[0].title.rendered %></h2>
       <img
         src="<%= voorpagina[0].yoast_head_json.og_image[0].url %>"
+        width="300"
         alt="<%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="caption">
@@ -32,6 +35,8 @@
       <h2><%- voorpagina[i].title.rendered %></h2>
       <img
         src="<%= voorpagina[i].yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= voorpagina[i].yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= voorpagina[i].yoast_head_json.author %></p>
@@ -53,6 +58,8 @@
       <h2><%- binnenland.title.rendered %></h2>
       <img
         src="<%= binnenland.yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= binnenland.yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= binnenland.yoast_head_json.author %></p>
@@ -74,6 +81,8 @@
       <h2><%- buitenland.title.rendered %></h2>
       <img
         src="<%= buitenland.yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= buitenland.yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= buitenland.yoast_head_json.author %></p>
@@ -92,6 +101,8 @@
       <h2><%- columns.title.rendered %></h2>
       <img
         src="<%= columns.yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= columns.yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= columns.yoast_head_json.author %></p>
@@ -110,6 +121,8 @@
       <h2><%- economie.title.rendered %></h2>
       <img
         src="<%= economie.yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= economie.yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= economie.yoast_head_json.author %></p>
@@ -132,6 +145,8 @@
       <img
         src="<%= kunstmedia.yoast_head_json.og_image[0].url %>"
         alt="<%= kunstmedia.yoast_head_json.schema['@graph'][2].caption %>"
+                width="300"
+
       />
       <p class="author"><%= kunstmedia.yoast_head_json.author %></p>
       <p class="reading-time">
@@ -149,6 +164,8 @@
       <h2><%- podcast.title.rendered %></h2>
       <img
         src="<%= podcast.yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= podcast.yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= podcast.yoast_head_json.author %></p>
@@ -167,6 +184,8 @@
       <h2><%- politiek.title.rendered %></h2>
       <img
         src="<%= politiek.yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= politiek.yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= politiek.yoast_head_json.author %></p>
@@ -188,6 +207,8 @@
       <h2><%- wetenschap.title.rendered %></h2>
       <img
         src="<%= wetenschap.yoast_head_json.og_image[0].url %>"
+                width="300"
+
         alt="<%= wetenschap.yoast_head_json.schema['@graph'][2].caption %>"
       />
       <p class="author"><%= wetenschap.yoast_head_json.author %></p>
@@ -199,3 +220,5 @@
   </a>
 </div>
 <% }); %>
+
+<%- include('partials/footer'); %>
