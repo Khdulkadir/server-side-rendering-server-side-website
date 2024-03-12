@@ -38,200 +38,240 @@
   </a>
 </div>
 
-<% for (var i = 1; i <= 3; i++) { %>
 <div class="sub-article-container">
+<% for (var i = 1; i <= 3; i++) { %>
   <a
     class="article-link"
     href="<%= voorpagina[i].categories[0]%>/<%= voorpagina[i].id%>"
   >
     <article class="sub-article">
-      <h2><%- voorpagina[i].title.rendered %></h2>
-      <img
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= voorpagina[i].yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= voorpagina[i].yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= voorpagina[i].yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= voorpagina[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= voorpagina[i].date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- voorpagina[i].title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= voorpagina[i].yoast_head_json.author %> <span class="reading-time">– <%= voorpagina[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= voorpagina[i].date %></p>
+      </div>
     </article>
   </a>
+
+<% } %>
 </div>
 
-<% } %> <% binnenland.forEach(function(binnenland) { %>
-<div class="sub-article-binnenland-container">
+<div class="sub-article-container">
+ <% binnenland.forEach(function(binnenland) { %>
   <a
     class="article-link"
     href="<%= binnenland.categories[0]%>/<%= binnenland.id%>"
   >
-    <article class="sub-article-binnenland">
-      <h2><%- binnenland.title.rendered %></h2>
-      <img
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= binnenland.yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= binnenland.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= binnenland.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= binnenland.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= binnenland.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- binnenland.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= binnenland.yoast_head_json.author %> <span class="reading-time">– <%= binnenland.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= binnenland.date %></p>
+      </div>
     </article>
   </a>
+<% }); %> 
 </div>
 
-<% }); %> <% buitenland.forEach(function(buitenland) { %>
-<div class="sub-article-buitenland-container">
+<div class="sub-article-container">
+
+<% buitenland.forEach(function(buitenland) { %>
   <a
     class="article-link"
     href="<%= buitenland.categories[0]%>/<%= buitenland.id%>"
   >
-    <article class="sub-article-buitenland">
-      <h2><%- buitenland.title.rendered %></h2>
-      <img
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= buitenland.yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= buitenland.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= buitenland.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= buitenland.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= buitenland.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- buitenland.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= buitenland.yoast_head_json.author %> <span class="reading-time">– <%= buitenland.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= buitenland.date %></p>
+      </div>
     </article>
   </a>
+<% }); %>
 </div>
 
-<% }); %> <% columns.forEach(function(columns) { %>
-<div class="sub-article-columns-container">
-  <a class="article-link" href="<%= columns.categories[0]%>/<%= columns.id%>">
-    <article class="sub-article-columns">
-      <h2><%- columns.title.rendered %></h2>
-      <img
+<div class="sub-article-container">
+<% columns.forEach(function(columns) { %>
+  <a
+    class="article-link"
+    href="<%= columns.categories[0]%>/<%= columns.id%>"
+  >
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= columns.yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= columns.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= columns.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= columns.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= columns.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- columns.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= columns.yoast_head_json.author %> <span class="reading-time">– <%= columns.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= columns.date %></p>
+      </div>
     </article>
   </a>
+<% }); %>
 </div>
 
-<% }); %> <% economie.forEach(function(economie) { %>
-<div class="sub-article-economie-container">
-  <a class="article-link" href="<%= economie.categories[0]%>/<%= economie.id%>">
-    <article class="sub-article-economie">
-      <h2><%- economie.title.rendered %></h2>
-      <img
+<div class="sub-article-container">
+<% economie.forEach(function(economie) { %>
+  <a
+    class="article-link"
+    href="<%= economie.categories[0]%>/<%= economie.id%>"
+  >
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= economie.yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= economie.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= economie.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= economie.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= economie.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- economie.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= economie.yoast_head_json.author %> <span class="reading-time">– <%= economie.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= economie.date %></p>
+      </div>
     </article>
   </a>
-</div>
+<% }); %>
+</div> 
 
-<% }); %> <% kunstmedia.forEach(function(kunstmedia) { %>
-<div class="sub-article-kunstmedia-container">
+<div class="sub-article-container">
+<% kunstmedia.forEach(function(kunstmedia) { %>
   <a
     class="article-link"
     href="<%= kunstmedia.categories[0]%>/<%= kunstmedia.id%>"
   >
-    <article class="sub-article-kunstmedia">
-      <h2><%- kunstmedia.title.rendered %></h2>
-      <img
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= kunstmedia.yoast_head_json.og_image[0].url %>"
+        width="768" height="512"
         alt="<%= kunstmedia.yoast_head_json.schema['@graph'][2].caption %>"
-                width="300"
-
       />
-      <p class="author"><%= kunstmedia.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= kunstmedia.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= kunstmedia.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- kunstmedia.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= kunstmedia.yoast_head_json.author %> <span class="reading-time">– <%= kunstmedia.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= kunstmedia.date %></p>
+      </div>
     </article>
   </a>
-</div>
+<% }); %>
+</div> 
 
-<% }); %> <% podcast.forEach(function(podcast) { %>
-<div class="sub-article-podcast-container">
-  <a class="article-link" href="<%= podcast.categories[0]%>/<%= podcast.id%>">
-    <article class="sub-article-podcast">
-      <h2><%- podcast.title.rendered %></h2>
-      <img
+<div class="sub-article-container">
+<% podcast.forEach(function(podcast) { %>
+  <a
+    class="article-link"
+    href="<%= podcast.categories[0]%>/<%= podcast.id%>"
+  >
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= podcast.yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= podcast.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= podcast.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= podcast.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= podcast.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- podcast.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= podcast.yoast_head_json.author %> <span class="reading-time">– <%= podcast.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= podcast.date %></p>
+      </div>
     </article>
   </a>
-</div>
+<% }); %>
+</div> 
 
-<% }); %> <% politiek.forEach(function(politiek) { %>
-<div class="sub-article-politiek-container">
-  <a class="article-link" href="<%= politiek.categories[0]%>/<%= politiek.id%>">
-    <article class="sub-article-politiek">
-      <h2><%- politiek.title.rendered %></h2>
-      <img
+<div class="sub-article-container">
+<% politiek.forEach(function(politiek) { %>
+  <a
+    class="article-link"
+    href="<%= politiek.categories[0]%>/<%= politiek.id%>"
+  >
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= politiek.yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= politiek.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= politiek.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= politiek.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= politiek.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- politiek.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= politiek.yoast_head_json.author %> <span class="reading-time">– <%= politiek.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= politiek.date %></p>
+      </div>
     </article>
   </a>
-</div>
+<% }); %>
+</div> 
 
-<% }); %> <% wetenschap.forEach(function(wetenschap) { %>
-<div class="sub-article-wetenschap-container">
+<div class="sub-article-container">
+<% wetenschap.forEach(function(wetenschap) { %>
   <a
     class="article-link"
     href="<%= wetenschap.categories[0]%>/<%= wetenschap.id%>"
   >
-    <article class="sub-article-wetenschap">
-      <h2><%- wetenschap.title.rendered %></h2>
-      <img
+    <article class="sub-article">
+      <div class="sub-article-featured-image-container">
+      <img class="sub-article-featured-image"
         src="<%= wetenschap.yoast_head_json.og_image[0].url %>"
-                width="300"
-
+        width="768" height="512"
         alt="<%= wetenschap.yoast_head_json.schema['@graph'][2].caption %>"
       />
-      <p class="author"><%= wetenschap.yoast_head_json.author %></p>
-      <p class="reading-time">
-        <%= wetenschap.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-      </p>
-      <p class="date"><%= wetenschap.date %></p>
+      </div>
+      <div class="sub-article-title-container">
+      <h2 class="sub-article-title"><%- wetenschap.title.rendered %></h2>
+      </div>
+      <div class="author-reading-time-date-container">
+      <p class="author-reading-time"><%= wetenschap.yoast_head_json.author %> <span class="reading-time">– <%= wetenschap.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
+      <p class="sub-article-date"><%= wetenschap.date %></p>
+      </div>
     </article>
   </a>
-</div>
 <% }); %>
+</div> 
 
 <%- include('partials/footer'); %>

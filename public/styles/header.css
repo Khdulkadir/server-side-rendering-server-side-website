@@ -70,6 +70,10 @@ p.slogan {
   font-family: Inter;
 }
 
+div.header-links-container {
+  display: flex;
+}
+
 a.header-links {
   font-size: 13px;
   font-weight: 500;

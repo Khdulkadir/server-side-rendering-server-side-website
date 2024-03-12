@@ -4,7 +4,7 @@ article.main-article {
 }
 
 div.article-content-container {
-  width: 35%;
+  width: 33%;
   border: 1px solid black;
   background-color: white;
   position: relative;
@@ -12,7 +12,7 @@ div.article-content-container {
 }
 
 div.article-image-container {
-  width: 65%;
+  width: 67%;
   border: 1px solid black;
 }
 
@@ -54,10 +54,6 @@ div.author-reading-time-container {
   color: black;
 }
 
-a.author-link {
-  color: black;
-}
-
 p.reading-time {
   color: #a8a8a8;
   margin-left: 3px;
@@ -78,4 +74,71 @@ p.article-date {
   font-weight: 500;
   font-family: Inter;
   text-transform: uppercase;
+}
+
+div.sub-article-container {
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+div.sub-article-container a.article-link {
+  width: 33.333%;
+}
+
+img.sub-article-featured-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center center;
+  vertical-align: middle;
+}
+
+h2.sub-article-title {
+  font-family: Inter;
+  font-size: 26px;
+  font-weight: 700;
+  color: black;
+  padding: 20px 0;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+article.sub-article {
+  background-color: white;
+}
+
+div.sub-article-featured-image-container {
+  border: 1px solid black;
+}
+
+div.sub-article-title-container {
+  border: 1px solid black;
+  padding: 0 20px;
+  border-top-color: transparent;
+  height: 250px;
+}
+
+div.author-reading-time-date-container {
+  border: 1px solid black;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Inter;
+  color: black;
+  border-top-color: transparent;
+}
+
+span.reading-time {
+  color: #a8a8a8;
+}
+
+p.sub-article-date {
+  color: #a8a8a8;
 }
