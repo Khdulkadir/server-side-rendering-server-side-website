@@ -1,4 +1,9 @@
 <%- include('partials/head'); %>
+    <title>Red Pers - Podium voor de Journalistiek</title>
+    <link rel="stylesheet" href="/styles/index.css">
+  </head>
+<%- include('partials/header'); %>
+
 
 <div class="main-container">
   <a
@@ -6,21 +11,29 @@
     href="<%= voorpagina[0].categories[0] %>/<%= voorpagina[0].id%>"
   >
     <article class="main-article">
-      <h2><%- voorpagina[0].title.rendered %></h2>
-      <img
-        src="<%= voorpagina[0].yoast_head_json.og_image[0].url %>"
-        width="300"
-        alt="<%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>"
-      />
-      <p class="caption">
-        <%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>
-      </p>
-      <span><%- voorpagina[0].excerpt.rendered %></span>
+      <div class="article-content-container">
+      <div class="article-date-container">
+      <p class="article-date"><%= voorpagina[0].date %></p>
+      </div>
+        <h2 class="article-title"><%- voorpagina[0].title.rendered %></h2>
+      <span class="excerpt"><%- voorpagina[0].excerpt.rendered %></span>
+      <div class="author-reading-time-container">
       <p class="author"><%= voorpagina[0].yoast_head_json.author %></p>
-      <p class="reading-time">
+      <p class="reading-time">–
         <%= voorpagina[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %>
       </p>
-      <p class="date"><%= voorpagina[0].date %></p>
+      </div>
+      </div>
+      <div class="article-image-container">
+      <img class="article-featured-image"
+        src="<%= voorpagina[0].yoast_head_json.og_image[0].url %>"
+        width="800" height="686"
+        alt="<%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>"
+      />
+            <p class="caption">
+        <%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>
+      </p>
+      </div>
     </article>
   </a>
 </div>
