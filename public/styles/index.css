@@ -142,3 +142,39 @@ span.reading-time {
 p.sub-article-date {
   color: #a8a8a8;
 }
+
+section.sub-article-section {
+  display: flex;
+  justify-content: space-between;
+  border-top: 5px solid black;
+  margin: 50px 0;
+}
+
+h2.sub-article-section-heading {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  padding: 10px 15px;
+}
+
+span.sub-article-section-link-text {
+  vertical-align: 6px;
+  margin-right: 20px;
+}
+
+a.sub-article-section-link {
+  font-size: 13px;
+  font-family: Inter;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: black;
+  padding-top: 10px;
+  transition: 0.3s;
+  &:hover {
+    fill: #a8a8a8;
+    color: #a8a8a8;
+  }
+}
