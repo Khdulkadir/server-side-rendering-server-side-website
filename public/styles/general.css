@@ -34,6 +34,14 @@ ol {
   list-style: none;
 }
 
+button {
+  border: unset;
+  background-color: unset;
+  &:hover {
+    background-color: unset;
+  }
+}
+
 a {
   text-decoration: none;
   display: block;
