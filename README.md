@@ -3,6 +3,8 @@
 # Red Pers
 Omzetten van nieuwssite gemaakt met elementor naar ejs en node.
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+![image](https://github.com/Khdulkadir/server-side-rendering-server-side-website/assets/144004145/1dba716c-aed1-4173-ac49-902bd3bdcd5f)
+
 
 ## Beschrijving
 Na het forken van de repo heb ik eerst ik alle vereiste bestanden aangemaakt in VS Code. Server.js voor de backend, /views voor de ejs code, /public voor alle assets. Daarna heb ik npm install ingevoerd in de console om Node modules te installeren. Alle backend code heb ik overgenomen van de vorige sprint voor zover dat mogelijk was.
