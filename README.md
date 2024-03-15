@@ -1,21 +1,11 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
+# Red Pers
+Omzetten van nieuwssite gemaakt met elementor naar ejs en node.
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
-## Inhoudsopgave
-
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
-
 ## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+Na het forken van de repo heb ik eerst ik alle vereiste bestanden aangemaakt in VS Code. Server.js voor de backend, /views voor de ejs code, /public voor alle assets. Daarna heb ik npm install ingevoerd in de console om Node modules te installeren. Alle backend code heb ik overgenomen van de vorige sprint voor zover dat mogelijk was.
 
 ## Gebruik
 <!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
