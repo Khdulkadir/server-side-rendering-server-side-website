@@ -46,7 +46,7 @@ headerdatedateParagraph.textContent = headerdatedateString;
 
 // Get all elements with the class "article-date" or "sub-article-date"
 const articledateParagraphs = document.querySelectorAll(
-  ".article-date, .sub-article-date"
+  ".article-date, .sub-article-date, .sub-article-date-mobile"
 );
 
 // Loop through each paragraph element
@@ -83,3 +83,21 @@ articledateParagraphs.forEach((paragraph) => {
   // Set the text content of the paragraph to the shortened date string
   paragraph.textContent = shortenedDateString;
 });
+
+
+// Change Minuten to Min
+
+// Get all elements with the class "reading-time"
+var elements = document.getElementsByClassName("reading-time");
+
+// Loop through each element
+for (var i = 0; i < elements.length; i++) {
+    // Get the text content of the element
+    var text = elements[i].textContent;
+    
+    // Replace "minuten" with "min"
+    var newText = text.replace("minuten", "min");
+    
+    // Set the modified text back to the element
+    elements[i].textContent = newText;
+}

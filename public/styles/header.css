@@ -113,3 +113,36 @@ div.logo-container {
     opacity: 0.5;
   }
 }
+
+@media screen and (min-width: 300px) and (max-width:900px) {
+  ul.primary-nav-items {
+    overflow: auto;    
+    justify-content: normal;
+    gap: 15px;
+  }
+
+  li.primary-nav-item {
+    white-space: nowrap;
+    margin-right: 5px;
+  }
+
+  div.header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  nav.topbar-left {
+    display: none;
+  }
+
+  div.topbar-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:500px) {
+  a.topbar-link {
+    font-size: 10px;
+  }
+}

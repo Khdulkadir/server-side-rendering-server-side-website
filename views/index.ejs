@@ -31,8 +31,7 @@
         width="800" height="686"
         alt="<%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>"
       />
-            <p class="caption">
-        <%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>
+            <p class="caption">Beeld: <%= voorpagina[0].yoast_head_json.schema['@graph'][2].caption %>
       </p>
       </div>
     </article>
@@ -47,13 +46,14 @@
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
-      <img class="sub-article-featured-image"
+        <img class="sub-article-featured-image"
         src="<%= voorpagina[i].yoast_head_json.og_image[0].url %>"
         width="768" height="512"
         alt="<%= voorpagina[i].yoast_head_json.schema['@graph'][2].caption %>"
-      />
+        />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= voorpagina[i].date %></p>
       <h2 class="sub-article-title"><%- voorpagina[i].title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -86,6 +86,7 @@
       />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= binnenland.date %></p>
       <h2 class="sub-article-title"><%- binnenland.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -117,6 +118,7 @@
       />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= buitenland.date %></p>
       <h2 class="sub-article-title"><%- buitenland.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -148,6 +150,7 @@
       />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= columns.date %></p>
       <h2 class="sub-article-title"><%- columns.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -179,6 +182,7 @@
       />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= economie.date %></p>
       <h2 class="sub-article-title"><%- economie.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -210,6 +214,8 @@
       />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= kunstmedia.date %></p>
+
       <h2 class="sub-article-title"><%- kunstmedia.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -241,6 +247,7 @@
       />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= podcast.date %></p>
       <h2 class="sub-article-title"><%- podcast.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -272,6 +279,7 @@
       />
       </div>
       <div class="sub-article-title-container">
+      <p class="sub-article-date-mobile"><%= politiek.date %></p>
       <h2 class="sub-article-title"><%- politiek.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
@@ -303,7 +311,8 @@
       />
       </div>
       <div class="sub-article-title-container">
-      <h2 class="sub-article-title"><%- wetenschap.title.rendered %></h2>
+      <p class="sub-article-date-mobile"><%= wetenschap.date %></p>
+        <h2 class="sub-article-title"><%- wetenschap.title.rendered %></h2>
       </div>
       <div class="author-reading-time-date-container">
       <p class="author-reading-time"><%= wetenschap.yoast_head_json.author %> <span class="reading-time">– <%= wetenschap.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span></p>
