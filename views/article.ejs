@@ -1,21 +1,36 @@
+<%- include('partials/head'); %>
+    <title>Red Pers - <%- article.title.rendered %></h2></title>
+    <link rel="stylesheet" href="/styles/article.css">
+  </head>
+  <body>
+<%- include('partials/header'); %>
+
+<main>
 <div class="article-page-container">
   <article class="article-page">
-    <h2><%- article.title.rendered %></h2>
-    <img
-      class="featured-image"
+    <div class="article-featured-image-container">
+      <img
+      class="article-featured-image"
       src="<%= article.yoast_head_json.og_image[0].url %>"
       alt="<%= article.yoast_head_json.schema['@graph'][2].caption %>"
-    />
-    <p class="category-name"><%= article.categories%></p>
-    <p class="caption">
-      <%= article.yoast_head_json.schema['@graph'][2].caption %>
+      />
+    </div>
+    <div class="article-category-date-container">
+    <p class="article-category"><%= article.categories%></p>
+    <p class="article-post-date"><%= article.date %></p>
+    </div>
+    <div class="article-title-container">
+      <h2 class="article-title"><%- article.title.rendered %></h2>
+    </div>
+    <span class="article-excerpt"><%- article.excerpt.rendered %></span>
+    <div class="article-author-reading-time-container">
+    <p class="article-author">Auteur: <strong><%= article.author %></strong></p>
+    <p class="article-reading-time">Leestijd: <strong><%= article.yoast_head_json.twitter_misc["Geschatte leestijd"] %></strong>
     </p>
-    <span class="excerpt"><%- article.excerpt.rendered %></span>
-
-    <p class="reading-time">
-      <%= article.yoast_head_json.twitter_misc["Geschatte leestijd"] %>
-    </p>
-    <p class="date"><%= article.date %></p>
-    <div class="content"><%- article.content.rendered %></div>
+    </div>
+    <div class="article-content"><%- article.content.rendered %></div>
   </article>
 </div>
+</main>
+
+<%- include('partials/footer'); %>

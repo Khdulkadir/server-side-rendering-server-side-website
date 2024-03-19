@@ -101,3 +101,31 @@ for (var i = 0; i < elements.length; i++) {
     // Set the modified text back to the element
     elements[i].textContent = newText;
 }
+
+
+    // Input date string
+    var inputDateString = document.querySelector('.article-post-date').textContent;
+
+    // Parse the input date string into a Date object
+    var dateObj = new Date(inputDateString);
+
+    // Define an array to store the month names
+    var monthNamesArray = [
+      "Januari", "Februari", "Maart",
+      "April", "Mei", "Juni", "Juli",
+      "Augustus", "September", "Oktober",
+      "November", "December"
+    ];
+
+    // Extract the day, month, year, hour, and minute from the Date object
+    var dayValue = dateObj.getDate();
+    var monthIndexValue = dateObj.getMonth();
+    var yearValue = dateObj.getFullYear();
+    var hourValue = dateObj.getHours();
+    var minuteValue = dateObj.getMinutes();
+
+    // Format the date and time
+    var formattedDateStr = dayValue + " " + monthNamesArray[monthIndexValue] + " " + yearValue + ", " + hourValue + ":" + (minuteValue < 10 ? '0' : '') + minuteValue;
+
+    // Update the content of the element with the formatted date
+    document.querySelector('.article-post-date').textContent = formattedDateStr;

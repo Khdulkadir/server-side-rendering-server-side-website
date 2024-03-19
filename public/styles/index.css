@@ -192,6 +192,10 @@ a.sub-article-section-link {
   }
 }
 
+p.sub-article-date-mobile {
+  display: none;
+}
+
 @media screen and (min-width: 900px) and (max-width:1060px) {
   div.sub-article-container a.article-link {
     width: 48%;
@@ -272,6 +276,7 @@ a.sub-article-section-link {
   }
 
   p.sub-article-date-mobile {
+    display: block;
     text-transform: uppercase;
     font-size: 10px;
     font-weight: 700;
