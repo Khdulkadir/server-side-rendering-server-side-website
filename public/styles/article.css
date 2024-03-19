@@ -45,6 +45,10 @@ div.article-content p {
     margin-bottom: 20px;
 }
 
+div.article-content a {
+    display: inline;
+}
+
 div.article-content h4 {
     font-size: 18px;
 }
